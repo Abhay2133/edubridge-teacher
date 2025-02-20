@@ -1,16 +1,32 @@
-# edubridge_teacher
+### **EduBridge Teacher** 📚  
 
-A new Flutter project.
+EduBridge Teacher is a Flutter-based application designed for teachers to manage their educational content efficiently.  
 
-## Getting Started
+## 🚀 **Live Demo** (Web Version)  
+🔗 [EduBridge Teacher (GitHub Pages)](https://abhay2133.github.io/edubridge-teacher/)  
 
-This project is a starting point for a Flutter application.
+## 📱 **Download APK** (Android)  
+⬇️ [Download Latest APK](https://github.com/Abhay2133/edubridge-teacher/raw/apk-builds/apk/app-release.apk)  
 
-A few resources to get you started if this is your first Flutter project:
+## 🛠 **Features**  
+- ✅ Cross-platform support (Web & Android)  
+- ✅ User-friendly interface  
+- ✅ Optimized for performance  
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+## 💻 **How to Run Locally**  
+1. Clone the repository:  
+   ```sh
+   git clone https://github.com/Abhay2133/edubridge-teacher.git
+   cd edubridge-teacher
+   ```
+2. Install dependencies:  
+   ```sh
+   flutter pub get
+   ```
+3. Run the app:  
+   ```sh
+   flutter run
+   ```
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+## 📜 **License**  
+This project is licensed under the MIT License.  
