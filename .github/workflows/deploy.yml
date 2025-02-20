@@ -1,16 +1,16 @@
-name: Deploy Flutter Web to GitHub Pages
+name: Build and Deploy Flutter Web + APK
 
 on:
   push:
     branches:
-      - main # Change this if needed
+      - main  # Runs when changes are pushed to main
 
 jobs:
   build-and-deploy:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout repository
+      - name: Checkout Repository
         uses: actions/checkout@v4
 
       - name: Setup Flutter
@@ -19,11 +19,19 @@ jobs:
           flutter-version: 3.x
           channel: stable
 
-      - name: Install dependencies
+      - name: Install Dependencies
         run: flutter pub get
 
-      - name: Build Flutter web app
+      - name: Build Flutter Web App
         run: flutter build web --release --base-href "/edubridge-teacher/"
+
+      - name: Build APK
+        run: flutter build apk --release
+
+      - name: Prepare Deployment Directory
+        run: |
+          mkdir -p build/web/downloads
+          cp build/app/outputs/flutter-apk/app-release.apk build/web/edubridge-teacher.apk
 
       - name: Deploy to GitHub Pages
         uses: JamesIves/github-pages-deploy-action@v4
@@ -31,4 +39,4 @@ jobs:
           branch: gh-pages
           folder: build/web
           clean: true
-          token: ${{ secrets.GH_PAT }}  # Use Personal Access Token instead of GITHUB_TOKEN
+          token: ${{ secrets.GITHUB_TOKEN }}  # Default token should work
