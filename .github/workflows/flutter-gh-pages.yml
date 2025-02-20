@@ -3,7 +3,7 @@ name: Deploy Flutter Web to GitHub Pages
 on:
   push:
     branches:
-      - main # Change this if your default branch is different
+      - main # Change this if needed
 
 jobs:
   build-and-deploy:
@@ -16,14 +16,14 @@ jobs:
       - name: Setup Flutter
         uses: subosito/flutter-action@v2
         with:
-          flutter-version: 3.x  # Change this to your Flutter version
+          flutter-version: 3.x
           channel: stable
 
       - name: Install dependencies
         run: flutter pub get
 
       - name: Build Flutter web app
-        run: flutter build web --release --base-href "/<repo-name>/"
+        run: flutter build web --release --base-href "/edubridge-teacher/"
 
       - name: Deploy to GitHub Pages
         uses: JamesIves/github-pages-deploy-action@v4
@@ -31,3 +31,4 @@ jobs:
           branch: gh-pages
           folder: build/web
           clean: true
+          token: ${{ secrets.GH_PAT }}  # Use Personal Access Token instead of GITHUB_TOKEN
