@@ -39,4 +39,4 @@ jobs:
           branch: gh-pages
           folder: build/web
           clean: true
-          token: ${{ secrets.GITHUB_TOKEN }}  # Default token should work
+          token: ${{ secrets.GH_PAT }}  # Default token should work
