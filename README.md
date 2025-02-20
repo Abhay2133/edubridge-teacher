@@ -6,7 +6,7 @@ EduBridge Teacher is a Flutter-based application designed for teachers to manage
 🔗 [EduBridge Teacher (GitHub Pages)](https://abhay2133.github.io/edubridge-teacher/)  
 
 ## 📱 **Download APK** (Android)  
-⬇️ [Download Latest APK](https://github.com/Abhay2133/edubridge-teacher/raw/apk-builds/apk/app-release.apk)  
+⬇️ [Download Latest APK](https://abhay2133.github.io/edubridge-teacher/edubridge-teacher.apk)  
 
 ## 🛠 **Features**  
 - ✅ Cross-platform support (Web & Android)  
