@@ -1,9 +1,9 @@
-name: Build Flutter APK
+name: Build and Push APK
 
 on:
   push:
     branches:
-      - main # Change this if your default branch is different
+      - main # Change this if needed
 
 jobs:
   build-apk:
@@ -16,7 +16,7 @@ jobs:
       - name: Setup Flutter
         uses: subosito/flutter-action@v2
         with:
-          flutter-version: 3.x  # Change to your required Flutter version
+          flutter-version: 3.x  # Adjust the version as needed
           channel: stable
 
       - name: Install dependencies
@@ -25,13 +25,7 @@ jobs:
       - name: Build APK
         run: flutter build apk --release
 
-      - name: Upload APK artifact
-        uses: actions/upload-artifact@v4
-        with:
-          name: release-apk
-          path: build/app/outputs/flutter-apk/app-release.apk
-
-      - name: Commit and push APK to apk-builds branch
+      - name: Push APK to apk-builds branch
         run: |
           git config --global user.name "github-actions"
           git config --global user.email "github-actions@github.com"
@@ -41,4 +35,4 @@ jobs:
           mv build/app/outputs/flutter-apk/app-release.apk apk/app-release.apk
           git add apk/app-release.apk
           git commit -m "Generated APK from latest push"
-          git push --force origin apk-builds
+          git push --force https://x-access-token:${{ secrets.GH_PAT }}@github.com/${{ github.repository }}.git apk-builds
