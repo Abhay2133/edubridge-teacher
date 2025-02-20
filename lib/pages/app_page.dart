@@ -1,10 +1,7 @@
-import 'dart:ffi';
-
 import 'package:edubridge_teacher/pages/home_page.dart';
 import 'package:edubridge_teacher/pages/notification_page.dart';
 import 'package:edubridge_teacher/widgets/profile_widget.dart';
 import 'package:edubridge_teacher/pages/query_page.dart';
-import 'package:edubridge_teacher/widgets/card.dart';
 import 'package:flutter/material.dart';
 
 class AppPage extends StatefulWidget {
@@ -13,7 +10,7 @@ class AppPage extends StatefulWidget {
 }
 
 class _AppPageState extends State<AppPage> {
-  int _selectedIndex = 3;
+  int _selectedIndex = 0;
 
   void _onItemTapped(int index) {
     setState(() {
