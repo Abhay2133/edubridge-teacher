@@ -1,4 +1,4 @@
-name: Build and Deploy Flutter Web + APK
+name: Deploy Web
 
 on:
   push:
